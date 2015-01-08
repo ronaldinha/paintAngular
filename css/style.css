@@ -1,0 +1,82 @@
+canvas {
+	border: 1px solid #000000;
+}
+
+button{
+	padding: 0;
+	border: none;
+}
+
+#eraserButton {
+	margin-top: 20%;
+}
+
+.colorArea {
+	height: 207px;
+	width: 96;
+}
+
+.colorsDiv {
+	padding-top: 20%;
+}
+
+.tool {
+	transform: rotate(180deg);
+}
+
+.toolsDiv {
+	padding-top: 10%;	
+}
+
+.sizes {
+	background-image: url("../images/sizes/sizes.png");
+	height: 55px; 
+	width: 106px;
+	margin-top: 25%;
+}
+
+.huge {
+	position: relative;
+	top: 14px;
+	left: 9px;
+}
+
+.large {
+	position: relative;
+	top: 19px;
+	left: 9px;
+}
+
+.normal {
+	position: relative;
+	top: 22px;
+	left: 9px;
+}
+
+.small {
+	position: relative;
+	top:22px;
+	left: 9px;
+}
+
+
+.line {
+	position: relative;
+	top:33px;
+}
+
+.smallSize {
+	right: 0px;
+}
+
+.normalSize {
+	right: 15px;
+}
+
+.largeSize {
+	right: 38px;
+}
+
+.hugeSize {
+	right: 66px;
+}

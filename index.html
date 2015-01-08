@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="drawSth">
+	<head>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" type="text/css" href="libraries/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script type="text/javascript" src="libraries/angular.min.js"></script>
+		<!--[if IE]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
+		<title>Joanna's Angular test</title>
+	</head>
+	<body ng-controller="drawCtrl as draw">
+		<table>
+			<tr>
+				<td>
+					<div class="colorArea">
+						<button id="eraserButton" type="button" ng-click="draw.reset()" ng-show="curTool.name === 'eraser'"><img src="images/eraser-outline.png"></button>
+						<div ng-repeat="color in draw.colors" class="colorsDiv">
+							<button type="button" ng-click="changeColor(color)" ng-hide="curTool.name === 'eraser'"><img id="{{color.name + 'Image'}}" ng-src="{{color.defaultSize}}"></button>
+						</div>
+					</div>
+				</td>	
+				<td>
+					<div my-canvas id="canvasDiv" ng-init="draw.initCanvas(267,200)"></div><!--490,220 267,200-->
+				</td>
+				<td>
+					<span>
+						<div ng-repeat="tool in draw.tools" class="toolsDiv">
+							<button type="button" ng-click="changeTool(tool)"><img id="{{tool.name + 'Image'}}" ng-src="{{tool.imageDefault}}" width="105" height="27"></button>
+						</div>
+					</span>
+					<div class="sizes">
+						<span ng-repeat="size in draw.sizes">
+							<button type="button" ng-click="draw.changeSize(size)" ng-class="size.sClass"><img ng-src="{{size.image}}"></button>
+						</span>
+						<img id="lineImg" src="images/sizes/line.png" width="2" height="15" class="line normalSize">
+					</div>
+				</td>	
+			</tr>
+		</table>
+		<script type="text/javascript" src="js/app.js"></script>
+	</body>
+</html>
